@@ -2,13 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class DAO extends CI_Model {
-  
 
-  function insertar_modificar_entidad(
-    $entidad,
-    $datos = array(),
-    $filtro = array()
-  ){
+  function insertar_modificar_entidad($entidad, $datos = array(), $filtro = array()){
     if($filtro){
       $this->db->where($filtro);
       $this->db->update($entidad,$datos);
@@ -24,7 +19,7 @@ class DAO extends CI_Model {
     }else{
       return array(
         "status" => "1",
-        "mensaje" => "información procesada correctamente",
+        "mensaje" => "información guardada correctamente",
       );
     }
   }
