@@ -97,7 +97,7 @@ class Api extends RestController {
         "password_usuario" => $password
       );
 
-      $respuesta = $this->DAO->insertar_modificar_entidad('tb_usuarios', $datos);
+      $respuesta = $this->DAO->insert_modificar_entidad('tb_usuarios', $datos);
 
       if ($respuesta['status'] == '1') {
         $respuesta = array(
